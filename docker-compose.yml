@@ -1,0 +1,15 @@
+worker:
+    image: siptg/worker
+    restart: always
+    net: host
+    volumes:
+        - ./yate/conf:/etc/yate:ro
+    command: ["yate", "-s"]
+
+nginx:
+    image: nginx
+    restart: always
+    net: host
+    volumes:
+        - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+        - ./ssl:/etc/nginx/ssl:ro
