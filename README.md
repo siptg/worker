@@ -5,7 +5,7 @@ apt-get update
 apt-get upgrade
 ```
 
-Next, setup docker and dounload latest configs:
+Next, setup docker and download latest configs:
 ```
 cd ~
 wget get.docker.com -O - -o /dev/null | sudo sh
@@ -26,12 +26,12 @@ docker-compose create worker nginx && docker-compose start worker nginx
 After that set the host's `address:port` in the bot and push `Turn on` button. You're done!
 
 ## Default ports which are used by the worker
-| Port  	| Type 	| Area  	| Description            	| To change                                              	|
-|-------	|------	|-------	|------------------------	|--------------------------------------------------------	|
-| 50001* 	| TCP  	| all   	| Worker module external 	| nginx/nginx.conf: `stream`→`server`→`listen`           	|
-| 12345 	| TCP  	| local 	| Worker module internal 	| yate/conf/extmodule.conf: `listener tg_gateway`→`port` 	|
-| 50600 	| UDP  	| all   	| SIP signaling          	| yate/conf/ysipchan.conf: `general`→`port`              	|
-| 5038  	| TCP  	| local 	| Yate RManager          	| yate/conf/rmanager.conf: `general`→`port`              	|
+| Port   	| Type 	| Area  	| Description            	| To change                                              	|
+|--------	|------	|-------	|------------------------	|--------------------------------------------------------	|
+| 50001*  | TCP  	| all   	| Worker module external 	| nginx/nginx.conf: `stream`→`server`→`listen`           	|
+| 12345 	 | TCP  	| local 	| Worker module internal 	| yate/conf/extmodule.conf: `listener tg_gateway`→`port` 	|
+| 50600  	| UDP  	| all   	| SIP signaling          	| yate/conf/ysipchan.conf: `general`→`port`              	|
+| 5038  	 | TCP  	| local 	| Yate RManager          	| yate/conf/rmanager.conf: `general`→`port`              	|
  
 \* - the port which you have to provide to the bot.
 
