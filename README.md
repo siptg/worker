@@ -18,6 +18,8 @@ Get the `cert.pem` and `key.pem` from the [@siptg_bot](https://t.me/siptg_bot) a
 
 Next, verify and change if needed the worker's managing port which will be used to connect to your worker from sip.tg service (see [below](#default-ports-which-are-used-by-the-worker)). If you are is under the NAT, verify the port mapping at the NAT as well. Also don't forget to allow incoming connections for the specified port at your firewall if needed.
 
+Note, if you're going to run the Worker on the platform other than **amd64**, you have to change the images in `docker-compose.yml`. Available platforms see on [Docker Hub](https://hub.docker.com/r/siptg/worker/tags/).
+
 Next, run the worker by command:
 ```
 docker-compose create worker nginx && docker-compose start worker nginx
