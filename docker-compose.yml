@@ -4,6 +4,7 @@ worker:
     net: host
     volumes:
         - ./yate/conf:/etc/yate:ro
+        - ./ssl:/etc/yate/ssl:ro
     command: ["yate", "-s"]
 
 nginx:
