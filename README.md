@@ -32,7 +32,9 @@ After that set the host's `address:port` in the bot and push `Turn on` button. Y
 |--------	|------	|-------	|------------------------	|--------------------------------------------------------	|
 | 50001* 	| TCP  	| all   	| Worker module external 	| nginx/nginx.conf: `stream`→`server`→`listen`           	|
 | 12345  	| TCP  	| local 	| Worker module internal 	| yate/conf/extmodule.conf: `listener tg_gateway`→`port` 	|
-| 50600  	| UDP  	| all   	| SIP signaling          	| yate/conf/ysipchan.conf: `general`→`port`              	|
+| 50600  	| UDP  	| all   	| UDP SIP signaling      	| yate/conf/ysipchan.conf: `general`→`port`              	|
+| 50600  	| TCP  	| all   	| TCP SIP signaling      	| yate/conf/ysipchan.conf: `listener tcp`→`port`         	|
+| 50610  	| TCP  	| all   	| TLS SIP signaling      	| yate/conf/ysipchan.conf: `listener tls`→`port`         	|
 | 5038   	| TCP  	| local 	| Yate RManager          	| yate/conf/rmanager.conf: `general`→`port`              	|
 
 \* - the port which you have to provide to the bot.
