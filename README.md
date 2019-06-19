@@ -53,5 +53,5 @@ docker-compose restart worker
 Inside `worker` directory run:
 ```
 git pull
-docker-compose up -d worker
+docker-compose pull worker && docker-compose up -d worker
 ```
