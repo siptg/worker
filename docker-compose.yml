@@ -5,6 +5,7 @@ worker:
   volumes:
     - ./yate/conf:/etc/yate
     - ./ssl:/etc/yate/ssl:ro
+    - ./yate/logs:/var/log/yate
 
 nginx:
   image: nginx
