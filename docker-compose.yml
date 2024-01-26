@@ -1,6 +1,6 @@
 worker:
   image: siptg/worker
-  restart: always
+  restart: unless-stopped
   net: host
   volumes:
     - ./yate/conf:/etc/yate
@@ -9,7 +9,7 @@ worker:
 
 nginx:
   image: nginx
-  restart: always
+  restart: unless-stopped
   net: host
   volumes:
     - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
