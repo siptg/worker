@@ -1,0 +1,16 @@
+[DEFAULT]
+ignoreip = 127.0.0.1/8
+ignorecache = key="<ip>", max-count=100, max-time=600
+ignorecommand = /config/fail2ban/check-ip.sh "<ip>"
+bantime = 1800
+bantime.increment = true
+findtime = 600
+maxretry = 5
+chain = INPUT
+
+[yate]
+enabled  = true
+filter   = time-ip-pair
+action   = iptables-multiport[name=yate, port="50600,50610", protocol="udp,tcp"]
+logpath  = %(logs_path)s/yate/logs/ban.log
+logtimezone = UTC

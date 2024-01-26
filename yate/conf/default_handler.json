@@ -1,0 +1,28 @@
+{
+  "user.register": {
+    "priority": 1000,
+    "conditions": [{"code": null}, {"reason": null}],
+    "process": false,
+    "params": {
+      "code": "503",
+      "reason": "No response from Manager"
+    }
+  },
+  "user.auth": {
+    "priority": 1000,
+    "result": "-",
+    "params": {
+      "error": "503",
+      "reason": "No response from Manager",
+      "noban": "true"
+    }
+  },
+  "call.route": {
+    "priority": 1000,
+    "result": "-",
+    "params": {
+      "error": "503",
+      "reason": "No response from Manager"
+    }
+  }
+}
