@@ -25,7 +25,7 @@ Note, if you're going to run the Worker on the platform other than **amd64**, yo
 
 Next, run the worker by command:
 ```
-docker-compose up -d worker nginx
+docker-compose up -d
 ```
 
 After that set the host's `address:port` in the bot and push `Turn on` button. You're done!
@@ -49,12 +49,12 @@ If you're using VPS service with symmetric NAT (like Amazon or Scaleway; the IP 
 ## Restart
 Inside `worker` directory run:
 ```
-docker-compose restart worker
+docker-compose restart
 ```
 
 ## Update
 Inside `worker` directory run:
 ```
 git pull
-docker-compose pull worker && docker-compose up -d worker
+docker-compose pull && docker-compose up -d
 ```
